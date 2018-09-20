@@ -1,0 +1,16 @@
+[15-May-2018 17:36:17 America/New_York] PHP Parse error:  syntax error, unexpected '<' in /home/cubidhxw/public_html/allposts/index.php on line 38
+[15-May-2018 17:36:20 America/New_York] PHP Parse error:  syntax error, unexpected '<' in /home/cubidhxw/public_html/allposts/index.php on line 38
+[15-May-2018 21:36:35 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /home/cubidhxw/public_html/allposts/vendor/dragos-roua/php-steem-tools/src/SteemLayer.php on line 45
+[15-May-2018 21:36:35 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/cubidhxw/public_html/allposts/index.php on line 47
+[15-May-2018 21:36:43 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /home/cubidhxw/public_html/allposts/vendor/dragos-roua/php-steem-tools/src/SteemLayer.php on line 45
+[15-May-2018 21:36:43 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/cubidhxw/public_html/allposts/index.php on line 47
+[15-May-2018 21:36:48 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /home/cubidhxw/public_html/allposts/vendor/dragos-roua/php-steem-tools/src/SteemLayer.php on line 45
+[15-May-2018 21:36:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/cubidhxw/public_html/allposts/index.php on line 47
+[15-May-2018 21:37:02 UTC] PHP Warning:  array_key_exists() expects parameter 2 to be array, null given in /home/cubidhxw/public_html/allposts/vendor/dragos-roua/php-steem-tools/src/SteemLayer.php on line 45
+[15-May-2018 21:37:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/cubidhxw/public_html/allposts/index.php on line 47
+[19-May-2018 17:34:34 UTC] PHP Warning:  Illegal string offset 'author' in /home/cubidhxw/public_html/allposts/index.php on line 52
+[19-May-2018 17:34:34 UTC] PHP Warning:  Illegal string offset 'permlink' in /home/cubidhxw/public_html/allposts/index.php on line 52
+[19-May-2018 17:34:34 UTC] PHP Warning:  Illegal string offset 'title' in /home/cubidhxw/public_html/allposts/index.php on line 52
+[19-May-2018 17:34:34 UTC] PHP Notice:  Undefined index: author in /home/cubidhxw/public_html/allposts/index.php on line 52
+[19-May-2018 17:34:34 UTC] PHP Notice:  Undefined index: permlink in /home/cubidhxw/public_html/allposts/index.php on line 52
+[19-May-2018 17:34:34 UTC] PHP Notice:  Undefined index: title in /home/cubidhxw/public_html/allposts/index.php on line 52

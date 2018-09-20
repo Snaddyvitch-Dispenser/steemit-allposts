@@ -1,0 +1,7 @@
+{
+
+  "minimum-stability": "dev",
+  "require": {
+    "dragos-roua/php-steem-tools": "dev-master"
+  }
+}

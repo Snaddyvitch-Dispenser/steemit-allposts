@@ -1,0 +1,103 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "94676337c36b2d7073252c3149ef0fae",
+    "packages": [
+        {
+            "name": "dragos-roua/php-steem-tools",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dragosroua/php-steem-tools.git",
+                "reference": "459de980d10b393b42dbd6250fe49d9340a96f17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dragosroua/php-steem-tools/zipball/459de980d10b393b42dbd6250fe49d9340a96f17",
+                "reference": "459de980d10b393b42dbd6250fe49d9340a96f17",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4",
+                "textalk/websocket": "1.0.*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DragosRoua\\PHPSteemTools\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dragos Roua",
+                    "email": "dragosroua@gmail.com"
+                }
+            ],
+            "description": "Tools to interact with the Steem blockchain.",
+            "keywords": [
+                "Steemit",
+                "blockchain",
+                "package"
+            ],
+            "time": "2018-01-03T07:47:58+00:00"
+        },
+        {
+            "name": "textalk/websocket",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Textalk/websocket-php.git",
+                "reference": "ba2e5f9ef7cf24d536d1c864ae74b2a9599b86eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Textalk/websocket-php/zipball/ba2e5f9ef7cf24d536d1c864ae74b2a9599b86eb",
+                "reference": "ba2e5f9ef7cf24d536d1c864ae74b2a9599b86eb",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.1.*",
+                "phpunit/phpunit-selenium": "1.3.3",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WebSocket\\": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fredrik Liljegren",
+                    "email": "fredrik.liljegren@textalk.se"
+                }
+            ],
+            "description": "WebSocket client and server",
+            "time": "2015-04-11T05:45:54+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "dragos-roua/php-steem-tools": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
