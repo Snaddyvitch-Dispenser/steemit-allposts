@@ -1,0 +1,243 @@
+#wrapper {
+    width: 1000px;
+    height: auto;
+    padding-bottom: 1px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: #8f8f8f;
+}
+
+html, body {
+    font-family: "Montserrat",Arial, sans-serif;
+    margin: 0;
+    height: 100%;
+    padding: 0;
+}
+
+#header {
+    height: 50px;
+    background: #555;
+}
+
+#id {
+    height: 50px;
+    width: 30%;
+    background: #000;
+    color: #fff;
+    display: inline-block;
+}
+
+#nav {
+    float: right;
+    width: 60%;
+    height: 50px;
+    background: #555;
+}
+
+#nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#nav li {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#nav li form input[type=text] {
+    width: 80%;
+    display: inline;
+    box-sizing: border-box;
+    line-height: 19px;
+    font-size: 15px;
+    padding: 2px;
+    float: left;
+    border: 1px solid #fff;
+    background: #111;
+    color: white;
+}
+
+#nav li form input[type=submit] {
+    width: 20%;
+    display: inline;
+    box-sizing: border-box;
+    height: 50px;
+
+    border: 1px solid black;
+}
+
+#nav a {
+    margin: 0;
+    width: 100%;
+    text-decoration: none;
+    line-height: 50px;
+    display: block;
+    color: white;
+}
+
+#nav a:hover {
+    background: #333;
+}
+
+#id p {
+    margin: 0;
+    line-height: 25px;
+    text-align: center;
+    font-size: 25px;
+    font-family: "Pacifico", Arial, sans-serif;
+}
+
+#banner {
+    height: calc(40% - 50px);
+    width: 100%;
+    background: #444;
+    color: #fff;
+}
+
+#content {
+    margin: 1%;
+    padding: 1%;
+    box-sizing: border-box;
+    width: 98%;
+    height: 57.5%;
+    background-color: #222;
+}
+
+#banner h1:first-of-type, #content>h1:first-of-type {
+    margin: 0;
+    padding: 2% 0px 10px 0px;
+    box-sizing: border-box;
+    text-align:center;
+}
+
+#content {
+    color: white;
+}
+
+#banner p {
+    margin: 0;
+    padding: 5px 10px;
+    text-align: center;
+}
+
+#content p {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+#banner a, #content a {
+    color: white;
+}
+
+.usr-image{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: 2px solid black;
+    display: inline-block;
+    float: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.usr-image#johndoer123 {
+    background-image:url(https://steemitimages.com/u/johndoer123/avatar);
+}
+
+.usr-image#cadawg {
+    background-image:url(https://steemitimages.com/u/cadawg/avatar);
+}
+
+.usr-image#mermaidvampire {
+    background-image:url(https://steemitimages.com/u/mermaidvampire/avatar);
+}
+
+.supporter{
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 400px;
+    max-width: 100%;
+}
+
+.supporter p, .supporter h1 {
+    text-align: left;
+    margin: 0;
+    display: inline-block;
+    width: calc(100% - 130px);
+}
+
+#banner,#content {
+    overflow: auto;
+}
+
+.busy-iframe {
+    width: 100%;
+    padding: 0;
+    margin: 10px 0;
+    height: 400px;
+}
+
+.navbutton,.ascsv, .backtostart {
+    padding: 10px 20px;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 5px;
+    margin: 10px 5px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.navbutton:hover,.ascsv:hover, .backtostart:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+.ip-link {
+    padding: 5px 0;
+    display: block;
+}
+
+#content a.ip-link:nth-of-type(even) {
+    margin: 10px 0px;
+}
+
+.navbutton {
+    background: #66b;
+}
+
+.ascsv {
+    background: #6b6;
+}
+
+.backtostart {
+    background: #b66;
+}
+
+@media only screen and (max-device-width: 480px) {
+
+    #id {
+        width: 100%;
+    }
+
+    #nav {
+        width: 100%;
+        display: block;
+    }
+
+    #nav li {
+        display: block;
+        width: 100%;
+    }
+
+    #nav ul {
+        display: block;
+        width: 100%;
+    }
+
+}

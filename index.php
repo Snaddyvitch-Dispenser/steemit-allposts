@@ -2,77 +2,110 @@
 
 $actual_link = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-function array_to_csv_download($array, $filename = "export.csv", $delimiter=";") {
-    // open raw memory as file so no temp files needed, you might run out of memory though
-    $f = fopen('php://memory', 'w');
-    // loop over the input array
-    foreach ($array as $line) {
-        // generate csv lines from the inner arrays
-        fputcsv($f, $line, $delimiter);
-    }
-    // reset the file pointer to the start of the file
-    fseek($f, 0);
-    // tell the browser it's going to be a csv file
-    header('Content-Type: application/csv');
-    // tell the browser we want to save it instead of displaying it
-    header('Content-Disposition: attachment; filename="'.$filename.'";');
-    // make php send the generated csv lines to the browser
-    fpassthru($f);
-}
-
-
 require_once 'vendor/autoload.php';
-$config['webservice_url'] = 'api.steemit.com';
+$config['webservice_url'] = 'steemd.privex.io';
 $api = new DragosRoua\PHPSteemTools\SteemApi($config);
 date_default_timezone_set('UTC');
 $dateNow = (new \DateTime())->format('Y-m-d\TH:i:s');
-if(!isset($_GET['csv'])) {
 ?>
 <!DOCTYPE HTML>
 <html>
+
 <head>
-    <title>Get All of An Authors Posts</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <title>Steemit All-Posts</title>
+    <meta name="description" content="Steemit Allposts is the best way to go back in time and filter posts efficiently!"/>
+    <meta name="keywords" content="steem,steemit,post,make,money,blockchain,history,filter,rewards,voting,split,share"/>
+    <meta charset="utf-8"/>
+    <meta lang="en"/>
+    <meta name="author" content="Conor Howland (@cadawg)"/>
+    <meta name="generator" content="@cadawg"/>
+    <meta name="copyright" content="Copyright Conor Howland 2018"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Pacifico" rel="stylesheet">
+
 </head>
-<form action="index.php">
-    <input type="text" name="user" value="<?php if(isset($_GET['user'])) {echo $_GET['user'];} ?>" placeholder="Username without @ (hit enter to submit)" class="w3-input">
-    If you see errors/pages with 0 items, It COULD mean that the node we use is down! <?php if(isset($_GET['user'])) {echo '<a href="' . $actual_link . "&csv" . '">Get Page Data as CSV</a>';} ?>
-</form>
-<?php };
-if(isset($_GET['user'])) {
-    $arr_csv = [["steem link", "busy link", "title", "date"]];
-    if (!isset($_GET['startat'])) {
-        $_GET['startat'] = "";
-    }
-    $params = [$_GET['user'], $_GET['startat'], $dateNow, 25];
-    $discuss100 = $api->getDiscussionsByAuthorBeforeDate($params);
-    foreach ($discuss100 as $key => $value) {
-        if (!($_GET['startat'] !== "" and $key === 0)) {
-            if (!isset($_GET['csv'])) {
-                echo("<a class='ip-link' href='https://steemit.com/@" . $value['author'] . "/" . $value["permlink"] . "'>" . $value['title'] . "</a><br>");
-            } else {
-                $arr_csv[] = ["https://steemit.com/@" . $value['author'] . "/" . $value["permlink"], "https://busy.org/@" . $value['author'] . "/" . $value["permlink"], $value['title'], $value['created']];
-            }
-        }
-    }
-    if (isset($_GET['csv'])) {
-        array_to_csv_download($arr_csv, $_GET['user'] . "-page-" . $_GET['startat'] . ".csv", ",");
-    } else {
-        if (isset($discuss100[24])) {
-            if ($_GET['startat'] == "") {
-                echo "25 Posts<br>";
-            } else {
-                echo "24 Posts<br>";
-            }
-            echo "<a class='w3-button w3-blue' href='/allposts/?user=" . $_GET['user'] . "&startat=" . $discuss100[24]["permlink"] . "'>Next Page!</a>";
-        } else {
-            $postqty = count($discuss100);
-            if ($_GET['startat'] == "") {
-                $postqty--;
-            }
-            echo $postqty . " Posts <br>";
-            echo 'That\'s all folks!<br>';
-            echo "<a class='w3-button w3-red' href='/allposts/?user=" . $_GET['user'] . "'>Back to start!</a>";
-        }
-    }
-}
+
+
+
+<body class="gr__pacificoduck">
+
+<div id="wrapper">
+
+    <div id="header">
+
+        <div id="id">
+
+            <p>Steemit<br>All Posts</p>
+
+        </div>
+        <div id="nav">
+
+            <ul>
+                <li><form><input type="text" placeholder="Steemit Username without @" value="<?php if(isset($_GET["username"])) {echo $_GET["username"];} ?>" name="username"><input type="text" placeholder="Tag to filter for (one only)" name="tags" value="<?php if(isset($_GET["tags"])) {echo $_GET["tags"];} ?>"><input type="submit"></form></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div id="banner">
+
+        <h1> Enter Search Above To Get Posts</h1>
+        <p>You must enter a username, but then optionally you can also specify a tag to get all posts of a certain theme. Thank <a href="https://steemit.com/@playfulfoodie">@playfulfoodie</a> for the idea!</p>
+    </div>
+    <div id="content">
+
+        <div class="postby">
+            <?php
+                if(isset($_GET["username"]) and $_GET["username"] != "") {
+                    ?>
+                    <h1>Posts By @<?php echo $_GET["username"]; ?> (Newest First)</h1>
+            <?php
+                    if (!isset($_GET['startat'])) {
+                        $_GET['startat'] = "";
+                    }
+                    $params = [$_GET['username'], $_GET['startat'], $dateNow, 25];
+                    $discuss100 = $api->getDiscussionsByAuthorBeforeDate($params);
+                    foreach ($discuss100 as $key=>$value) {
+                        if (isset($_GET["tags"]) and $_GET["tags"] != "") {
+
+                            if (in_array($_GET["tags"], json_decode($value["json_metadata"])->tags)) {
+                                echo("<a class='ip-link' target='_blank' href='https://steemit.com/@" . $value['author'] . "/" . $value["permlink"] . "'>" . $value['title'] . "</a>");
+                            }
+
+                        } elseif (!($_GET['startat'] !== "" and $key === 0)) {
+                                echo("<a class='ip-link' target='_blank' href='https://steemit.com/@" . $value['author'] . "/" . $value["permlink"] . "'>" . $value['title'] . "</a>");
+                        }
+                    }
+
+                    if (!isset($_GET["tags"])) {
+                        $_GET["tags"] = "";
+                    }
+                    if(isset($_GET["prevpage"])) {
+                        echo "<a class='navbutton' href='?username=" . $_GET['username'] . "&startat=" . $_GET["prevpage"] . "&tags=" . $_GET["tags"] . "'>Previous Page!</a>";
+                    }
+                    if (isset($discuss100[24])) {
+                        echo "<a class='navbutton' href='?username=" . $_GET['username'] . "&startat=" . $discuss100[24]["permlink"] . "&prevpage=" . $_GET["startat"] . "&tags=" . $_GET["tags"] . "'>Next Page!</a>";
+                    } else {
+                        echo "<a class='backtostart' href='?username=" . $_GET['username'] . "&tags=" . $_GET["tags"] . "'>Back to start!</a>";
+                    }
+                    echo "<a class='ascsv' href='csv.php?user=" . $_GET["username"] . "&startat=" . $_GET["startat"] ."'>Download As CSV</a>";
+                }
+            ?>
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
