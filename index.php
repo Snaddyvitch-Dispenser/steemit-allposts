@@ -99,6 +99,7 @@ $dateNow = (new \DateTime())->format('Y-m-d\TH:i:s');
                     echo "<a class='ascsv' href='csv.php?user=" . $_GET["username"] . "&startat=" . $_GET["startat"] ."'>Download As CSV</a>";
                 }
             ?>
+            <p>Copyright Conor Howland 2018 - <a href="https://steemit.com/@cadawg">@cadawg</a> - <a href="https://conor.icu">My Website</a></p>
         </div>
 
     </div>

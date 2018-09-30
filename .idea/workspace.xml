@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83ad705b-26c5-4250-afcf-6595feb12ac9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/array_to_csv.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/csv.php" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/style.css" />
-      <change beforePath="$PROJECT_DIR$/.idea/allposts.iml" afterPath="$PROJECT_DIR$/.idea/allposts.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change beforePath="$PROJECT_DIR$/js.js" afterPath="$PROJECT_DIR$/js.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,17 +27,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="79" column="72" lean-forward="false" selection-start-line="79" selection-start-column="72" selection-end-line="79" selection-end-column="72" />
+            <state relative-caret-position="484">
+              <caret line="94" column="124" lean-forward="false" selection-start-line="94" selection-start-column="124" selection-end-line="94" selection-end-column="124" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="719">
@@ -90,8 +85,8 @@
         <option value="$PROJECT_DIR$/js.js" />
         <option value="$PROJECT_DIR$/nindex.php" />
         <option value="$PROJECT_DIR$/csv.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/style.css" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -180,12 +175,20 @@
       <workItem from="1537915119657" duration="148000" />
       <workItem from="1538142229301" duration="47000" />
       <workItem from="1538244477810" duration="1207000" />
-      <workItem from="1538306788590" duration="7654000" />
+      <workItem from="1538306788590" duration="7893000" />
     </task>
+    <task id="LOCAL-00001" summary="New Version, with improved layout and tag based searching">
+      <created>1538315127700</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1538315127701</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26816000" />
+    <option name="totallyTimeSpent" value="27055000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
@@ -216,6 +219,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="New Version, with improved layout and tag based searching" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Version, with improved layout and tag based searching" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -471,18 +478,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="79" column="72" lean-forward="false" selection-start-line="79" selection-start-column="72" selection-end-line="79" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="719">
           <caret line="207" column="1" lean-forward="false" selection-start-line="207" selection-start-column="1" selection-end-line="207" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="94" column="124" lean-forward="false" selection-start-line="94" selection-start-column="124" selection-end-line="94" selection-end-column="124" />
           <folding />
         </state>
       </provider>
