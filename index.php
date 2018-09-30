@@ -12,7 +12,16 @@ $dateNow = (new \DateTime())->format('Y-m-d\TH:i:s');
 <html>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-45168180-10"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
+        gtag('config', 'UA-45168180-10');
+    </script>
+    
     <title>Steemit All-Posts</title>
     <meta name="description" content="Steemit Allposts is the best way to go back in time and filter posts efficiently!"/>
     <meta name="keywords" content="steem,steemit,post,make,money,blockchain,history,filter,rewards,voting,split,share"/>
