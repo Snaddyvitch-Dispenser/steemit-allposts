@@ -65,7 +65,7 @@ html, body {
     width: 20%;
     display: inline;
     box-sizing: border-box;
-    height: 50px;
+    height: 31px;
 
     border: 1px solid black;
 }
@@ -183,7 +183,7 @@ html, body {
     height: 400px;
 }
 
-.navbutton,.ascsv, .backtostart {
+.navbutton,.ascsv, .disabled, .backtostart {
     padding: 10px 20px;
     box-sizing: border-box;
     color: white;
@@ -203,6 +203,12 @@ html, body {
     display: block;
 }
 
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    background: grey;
+}
+
 #content a.ip-link:nth-of-type(even) {
     margin: 10px 0px;
 }
@@ -213,6 +219,12 @@ html, body {
 
 .ascsv {
     background: #6b6;
+}
+
+.no {
+    display: none;
+    width: 0;
+    height: 0;
 }
 
 .backtostart {
@@ -240,4 +252,44 @@ html, body {
         width: 100%;
     }
 
+}
+
+#ckky-lbl {
+    color: white;
+}
+
+.warning {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: orangered;
+    color: white;
+    font-weight: bold;
+}
+
+.warning a {
+    color: white;
+}
+
+.visible {
+    display: block;
+    position: absolute;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 30px;
+}
+
+.close:hover{
+    color: darkslategrey;
+    background: white;
 }

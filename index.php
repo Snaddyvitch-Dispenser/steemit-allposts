@@ -21,7 +21,7 @@ $dateNow = (new \DateTime())->format('Y-m-d\TH:i:s');
 
         gtag('config', 'UA-45168180-10');
     </script>
-    
+
     <title>Steemit All-Posts</title>
     <meta name="description" content="Steemit Allposts is the best way to go back in time and filter posts efficiently!"/>
     <meta name="keywords" content="steem,steemit,post,make,money,blockchain,history,filter,rewards,voting,split,share"/>
@@ -37,6 +37,14 @@ $dateNow = (new \DateTime())->format('Y-m-d\TH:i:s');
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+
+    <script>
+        function toBeta() {
+            $(".warning").addClass("visible");
+        }
+    </script>
+
+    <script src="sync.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Pacifico" rel="stylesheet">
 
 </head>
@@ -44,6 +52,12 @@ $dateNow = (new \DateTime())->format('Y-m-d\TH:i:s');
 
 
 <body class="gr__pacificoduck">
+
+<div class="warning">
+    <h3>Hey Steemian,</h3>
+    <p>You deserve better! We have your data downloaded, so now you can use the new version of this which is faster and allows for easier searching! Try it <a href="beta.php?reverse=on&username=<?php echo isset($_GET["username"]) ? $_GET["username"] : "" ; ?>&tags=<?php echo isset($_GET["tags"]) ? $_GET["tags"] : "" ; ?>"> here</a> &lt;&dash;&dash;&dash;&dash;&dash;&dash;&dash;&dash;&dash;</p>
+    <button class="close" onclick="this.parentNode.parentNode.removeChild(this.parentNode); return false;">&times;</button>
+</div>
 
 <div id="wrapper">
 
@@ -67,7 +81,7 @@ $dateNow = (new \DateTime())->format('Y-m-d\TH:i:s');
     <div id="banner">
 
         <h1> Enter Search Above To Get Posts</h1>
-        <p>You must enter a username, but then optionally you can also specify a tag to get all posts of a certain theme. Thank <a href="https://steemit.com/@playfulfoodie">@playfulfoodie</a> for the idea!</p>
+        <p>You must enter a username, but then optionally you can also specify a tag to get all posts of a certain theme. Thank <a href="https://steemit.com/@playfulfoodie">@playfulfoodie</a> for the idea!<br/>Please note, there is a new version, but for it to work, we need to download all your posts (which takes a while & a lot of resources [So Please Consider Donating to @cadawg]), we will notify you when it is ready. So after entering a username, keep this page open if you can :) It is all done on our server and will not impact on your device's performance</p>
     </div>
     <div id="content">
 
@@ -115,6 +129,9 @@ $dateNow = (new \DateTime())->format('Y-m-d\TH:i:s');
 
 </div>
 
+<script async="async">
+   sync("<?php echo (isset($_GET["username"]) ? $_GET["username"] : ""); ?>");
+</script>
 
 </body>
 
